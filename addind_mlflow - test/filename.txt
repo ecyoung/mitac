@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\1_projects\AutoML\addind_mlflow\app_pages\Classification\clf1.py", line 119, in run_model
+    f1, classi_rep, y_pred, model = algo.log_reg(penalty=penalty, dual=dual, C=C, solver=solver, multi_class=multi_class)  # model instance
+TypeError: cannot unpack non-iterable NoneType object
+

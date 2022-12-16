@@ -275,8 +275,6 @@ def app():
                 with mlflow.start_run(run_name=runNameAsDatetime):
                     mlflow.log_params(parameters)
                     mlflow.log_metrics(metrics)
-                    mlflow.log_figure(log_fig, 'D://1_projects/AutoML/addind_mlflow/artifacts')
-
         else:
             st.info(lang['upload_hint'])
     except Exception as ex:

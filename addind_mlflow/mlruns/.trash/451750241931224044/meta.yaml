@@ -1,0 +1,7 @@
+artifact_location: file:///D:/1_projects/AutoML/addind_mlflow/mlruns/451750241931224044
+creation_time: 1671171167621
+experiment_id: '451750241931224044'
+last_update_time: 1671171234783
+lifecycle_stage: active
+name: KNeighborsRegressor
+tags: {}

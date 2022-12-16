@@ -1,0 +1,7 @@
+artifact_location: file:///D:/1_projects/AutoML/addind_mlflow/mlruns/141873321792127846
+creation_time: 1671171318104
+experiment_id: '141873321792127846'
+last_update_time: 1671171340691
+lifecycle_stage: active
+name: RandomForestClassfier
+tags: {}

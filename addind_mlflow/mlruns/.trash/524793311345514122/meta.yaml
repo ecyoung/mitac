@@ -1,0 +1,7 @@
+artifact_location: file:///D:/1_projects/AutoML/addind_mlflow/mlruns/524793311345514122
+creation_time: 1671169361214
+experiment_id: '524793311345514122'
+last_update_time: 1671169701232
+lifecycle_stage: active
+name: LinearRegression
+tags: {}

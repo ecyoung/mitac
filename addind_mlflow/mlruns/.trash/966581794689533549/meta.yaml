@@ -1,0 +1,7 @@
+artifact_location: file:///D:/1_projects/AutoML/addind_mlflow/mlruns/966581794689533549
+creation_time: 1671168793572
+experiment_id: '966581794689533549'
+last_update_time: 1671170805006
+lifecycle_stage: active
+name: LogisticRegression
+tags: {}
