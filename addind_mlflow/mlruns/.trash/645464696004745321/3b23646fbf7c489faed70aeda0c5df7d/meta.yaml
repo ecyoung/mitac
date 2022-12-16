@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/1_projects/AutoML/addind_mlflow/mlruns/645464696004745321/3b23646fbf7c489faed70aeda0c5df7d/artifacts
+end_time: 1671183928748
+entry_point_name: ''
+experiment_id: '645464696004745321'
+lifecycle_stage: active
+run_id: 3b23646fbf7c489faed70aeda0c5df7d
+run_name: '2022-12-16 17:45:27.267915'
+run_uuid: 3b23646fbf7c489faed70aeda0c5df7d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671183928437
+status: 3
+tags: []
+user_id: yinchen

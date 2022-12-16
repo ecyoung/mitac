@@ -4,6 +4,8 @@ Created on Thu Sep 24 10:27:59 2020
 
 @author: NBGhoshSu3
 """
+import mlflow
+from datetime import datetime
 
 from app_pages.app_page import AppPage
 from six import StringIO
@@ -106,7 +108,9 @@ def app():
         y_train_pred = dt_classifier.predict(X_train)
         y_test_pred = dt_classifier.predict(X_test)
         st.write(lang['train_performance'])
-        st.write(lang['train_accuracy'], 100 * np.round(accuracy_score(y_train, y_train_pred), 3))
+        train_ACC = 100 * np.round(accuracy_score(y_train, y_train_pred), 3)
+        mlflow.log_metric('train_accuracy', train_ACC)
+        st.write(lang['train_accuracy'], train_ACC)
         st.write(lang['confusion_matrix'])
         confusion = confusion_matrix(y_train, y_train_pred)
         st.write(confusion)
@@ -128,7 +132,9 @@ def app():
 
         st.write("-"*60)
         st.write(lang['test_performance'])
-        st.write(lang['train_accuracy'], 100 * np.round(accuracy_score(y_test, y_test_pred), 3))
+        test_ACC =  100 * np.round(accuracy_score(y_test, y_test_pred), 3)
+        mlflow.log_metric('test_accuracy', test_ACC)
+        st.write(lang['train_accuracy'], test_ACC)
         st.write(lang['confusion_matrix'])
         confusion = confusion_matrix(y_test, y_test_pred)
         st.write(confusion)
@@ -156,6 +162,13 @@ def app():
     min_samples_split = st.sidebar.slider(lang['min_samples_bf_split'], min_value=2, max_value=200, step=1, value=5)
     min_samples_leaf = st.sidebar.slider(lang['min_samples_in_leaf'], min_value=1, max_value=200, step=1, value=5)
     criterion = st.sidebar.selectbox(lang['split_criterion'], ['gini', 'entropy'])
+    mlflow.set_experiment('聯城化Decision_Tree')
+    dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
+                'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
+
+    decisionTreeName = str(datetime.now())
+
+
 
     dt = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
 
@@ -163,5 +176,6 @@ def app():
     st.write(lang['decision_result'])
     st.image(graph.create_png(), width=1000)
     st.write("-" * 60)
-
-    evaluate_model(dt)
+    with mlflow.start_run(run_name=decisionTreeName):
+        mlflow.log_params(dtparams)
+        evaluate_model(dt)

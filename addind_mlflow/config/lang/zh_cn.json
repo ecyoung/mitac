@@ -34,7 +34,7 @@
         "upload_here": "在这里上传资料",
         "upload_help": "只接受 `csv` 档",
         "train_performance": "### Training Dataset Performance",
-        "train_accuracy": "Acciracy: ",
+        "train_accuracy": "Accuracy: ",
         "confusion_matrix": "#### Confusion Matrix",
         "sensitivity": "Sensitivity / Recall: ",
         "specificity": "Specificity : ",
