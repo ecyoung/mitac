@@ -1,2 +1,0 @@
-install graphiz binary
-pip install requirement
