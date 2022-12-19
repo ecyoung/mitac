@@ -11,4 +11,4 @@ developmentMode = false
 dataFrameSerialization = "legacy"
 
 [server]
-port = 8501
+port = 8000
