@@ -4,7 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="" />
+    <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/UI-ML-V2-prophet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.streamlit/config.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/.streamlit/secrets.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/UI-ML-V2-main1 - 捷徑.lnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Classification/clasi_algos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Classification/classification_to_df.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Classification/clf1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Classification/my_plot_confusion_matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Classification/split.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder/_df_loader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder/df_loader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder/df_loader2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder/df_loader_set.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder/pno.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/data_group.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/define.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/df_selector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_fix_month_predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_predict_next_month.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_prophet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_train_all.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/pno.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/PredictNextOrder2/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Regression/reg_algos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/Regression/split.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/app_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/config_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/decision.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/decision1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/eda_pd_profiling/ForbesRichestAtheletes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/eda_pd_profiling/ITSalarySurveyEU2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/eda_pd_profiling/eda3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/home.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/app_pages/multiapp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/config/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/config/lang/zh_cn.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/config/lang/zh_tw.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/ITSalarySurveyEU2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/c3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/c4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/c5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/heart_v2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/titanic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/data/titanic1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/event_system/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/event_system/app_event.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/event_system/language_set_event.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/mlruns/0/meta.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/resources/TaipeiSansTCBeta-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/resources/icon_rob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/resources/main.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/resources/mitac-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/tests/df2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/tests/test.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/tests/test_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/config_setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/event.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/font_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/load_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/st_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/time_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet/util/xlsx2csv.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +92,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
