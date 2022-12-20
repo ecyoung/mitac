@@ -1,0 +1,6 @@
+artifact_location: file:///D:/1_projects/AutoML/UI-ML-V2-prophet-all/UI-ML-V2-prophet/mlruns/842142868979070242
+creation_time: 1671519337711
+experiment_id: '842142868979070242'
+last_update_time: 1671519337711
+lifecycle_stage: active
+name: LinearRegression

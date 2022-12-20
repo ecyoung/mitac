@@ -185,6 +185,7 @@ def app():
                 except Exception:
                     st.warning(lang['kn_warning'])
         except Exception as ex:
+            print(traceback.format_exc())
             print('run_model:' + str(ex))
 
     # starting data traning.
