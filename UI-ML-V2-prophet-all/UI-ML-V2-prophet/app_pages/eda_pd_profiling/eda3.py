@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
+from pathlib import Path
 
 from app_pages.app_page import AppPage
 
@@ -54,10 +55,12 @@ def app():
         try:
             if sample:
                 if name == 'Forbes Richest Atheletes':  # matchin user choose file
-                    df = pd.read_csv('app_pages\eda_pd_profiling\ForbesRichestAtheletes.csv')
+                    atheletes = Path('app_pages\eda_pd_profiling\ForbesRichestAtheletes.csv')
+                    df = pd.read_csv(atheletes)
                     return df  # retruning the data frame
                 elif name == 'IT Salary Survey EU 2020':
-                    df = pd.read_csv('app_pages\eda_pd_profiling\ITSalarySurveyEU2020.csv')
+                    itsal2020 = Path('app_pages\eda_pd_profiling\ITSalarySurveyEU2020.csv')
+                    df = pd.read_csv(itsal2020)
                     return df
             if custome:
                 df = pd.read_csv(file_upload)
