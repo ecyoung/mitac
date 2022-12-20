@@ -187,6 +187,7 @@ def app():
                 except Exception:
                     st.warning(lang['kn_warning'])
         except Exception as ex:
+            print(traceback.format_exc())
             print('run_model:' + str(ex))
 
     # starting data traning.
@@ -208,6 +209,7 @@ def app():
             try:
                 X, y = split.X_and_y(target)
             except Exception:
+                print(traceback.format_exc())
                 st.warning(lang['select_col_warning'])
             cat_col = X.select_dtypes(include=['object', 'category']).columns.tolist()
             num_col = X.select_dtypes(include=['float64', 'int64']).columns.tolist()
