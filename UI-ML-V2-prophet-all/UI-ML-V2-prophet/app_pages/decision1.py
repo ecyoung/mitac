@@ -5,6 +5,7 @@ Created on Thu Sep 24 10:27:59 2020
 @author: NBGhoshSu3
 """
 import mlflow
+from pathlib import Path
 from datetime import datetime
 
 from app_pages.app_page import AppPage
@@ -64,7 +65,8 @@ def app():
 
     # smple file getting function
 
-    df = pd.read_csv('data\c3.csv')
+    c3 = Path('data/c3.csv')
+    df = pd.read_csv(c3)
 
     # giving result by choosing dataset, custome or sample
 
