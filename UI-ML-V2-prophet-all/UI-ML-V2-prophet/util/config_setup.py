@@ -6,7 +6,7 @@ import streamlit as st
 from urllib.request import urlopen
 
 config_folder = 'https://raw.githubusercontent.com/violentzone/mitac/20221219/UI-ML-V2-prophet-all/UI-ML-V2-prophet/config/config.json'
-response = urlopen('config_folder')
+response = urlopen(config_folder)
 
 
 
