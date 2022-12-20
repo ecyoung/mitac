@@ -15,6 +15,7 @@ from sklearn.compose import ColumnTransformer
 import base64
 import pickle
 from warnings import filterwarnings
+import traceback
 
 
 from .reg_algos import Models
@@ -185,7 +186,6 @@ def app():
                 except Exception:
                     st.warning(lang['kn_warning'])
         except Exception as ex:
-            print(traceback.format_exc())
             print('run_model:' + str(ex))
 
     # starting data traning.
@@ -275,4 +275,5 @@ def app():
         else:
             st.info(lang['upload_hint'])
     except Exception as ex:
+        print(traceback.format_exc())
         print('model_train ' + str(ex))
