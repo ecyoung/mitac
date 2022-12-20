@@ -118,6 +118,7 @@ def app():
 
                     return score_train, mae_train, score_test, mae_test, y_pred_train, y_pred_test, model, parameters, metrics
                 except Exception:
+                    print(traceback.format_exc())
                     st.warning(lang['lr_warning'])
 
             elif algo_c == 'RandomForest Regressor':
