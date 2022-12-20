@@ -3,17 +3,17 @@ from os import listdir
 from os.path import isfile, join
 import json
 import streamlit as st
+from urllib.request import urlopen
 
-config_folder = 'config'
-lang_folder = f'{config_folder}/lang'
-config_filepath = f'{config_folder}/config.json'
+config_folder = 'https://raw.githubusercontent.com/violentzone/mitac/20221219/UI-ML-V2-prophet-all/UI-ML-V2-prophet/config/config.json'
+response = urlopen('config_folder')
+
 
 
 def config_setup():
     if 'config' in st.session_state:
         return
-    with open(config_filepath, encoding='utf-8') as f:
-        j = json.load(f)
+    j = json.load(response)
     st.session_state['config'] = j
     set_lang(st.session_state['config']['selected_lang'], True)
 
@@ -44,3 +44,5 @@ def save_config():
 
 def get_lang_files():
     return [f.replace('.json', '') for f in listdir(lang_folder) if isfile(join(lang_folder, f))]
+
+
