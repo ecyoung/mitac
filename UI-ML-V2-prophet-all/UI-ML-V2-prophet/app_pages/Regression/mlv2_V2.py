@@ -66,18 +66,13 @@ def app():
     # asiking for custome file from local machine
     file_upload = st.sidebar.file_uploader(lang['upload_here'], type=['csv'], help=lang['upload_help'])
     # getting the name of sample data set name
-    name = st.sidebar.selectbox(lang['select_sample_data'], ['None', 'california_housing', 'boston', 'diabetes'], help=lang['select_sample_help'])
+    name = st.sidebar.selectbox(lang['select_sample_data'], ['None', 'california_housing', 'diabetes'], help=lang['select_sample_help'])
 
     # smple file getting function
     def get_dataset(sample=True, custome=False):
         try:
             if sample:
-                if name == 'boston':  # boston dataset
-                    bos = datasets.load_boston()
-                    df = pd.DataFrame(data=bos['data'], columns=bos['feature_names'])
-                    df['Target'] = bos['target']
-                    return df.sample(frac=0.5)  # returning 50% of total data for faster preprocessing
-                elif name == 'california_housing':  # carlifornia housing dataset
+                if name == 'california_housing':  # carlifornia housing dataset
                     df, y = datasets.fetch_california_housing(as_frame=True, return_X_y=True)
                     df['Target'] = y
                     return df.sample(frac=0.5)
