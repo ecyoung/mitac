@@ -172,12 +172,15 @@ def app():
 
 
 
-    dt = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
 
-    graph = get_dt_graph(dt)
-    st.write(lang['decision_result'])
-    st.image(graph.create_png(), width=1000)
-    st.write("-" * 60)
+
+
     with mlflow.start_run(run_name=decisionTreeName):
+        dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
+        graph = get_dt_graph(dt_f)
+        mlflow.sklearn.log_model(dt_f, "model")
+        st.write(lang['decision_result'])
+        st.image(graph.create_png(), width=1000)
+        st.write("-" * 60)
         mlflow.log_params(dtparams)
-        evaluate_model(dt)
+        evaluate_model(dt_f)

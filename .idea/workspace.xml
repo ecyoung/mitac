@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AutoML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoML.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

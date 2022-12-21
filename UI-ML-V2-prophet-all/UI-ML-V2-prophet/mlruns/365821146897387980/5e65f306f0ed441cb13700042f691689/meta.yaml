@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/1_projects/AutoML/UI-ML-V2-prophet-all/UI-ML-V2-prophet/mlruns/365821146897387980/5e65f306f0ed441cb13700042f691689/artifacts
+end_time: 1671613640858
+entry_point_name: ''
+experiment_id: '365821146897387980'
+lifecycle_stage: active
+run_id: 5e65f306f0ed441cb13700042f691689
+run_name: '2022-12-21 17:07:17.844638'
+run_uuid: 5e65f306f0ed441cb13700042f691689
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671613637850
+status: 3
+tags: []
+user_id: yinchen
