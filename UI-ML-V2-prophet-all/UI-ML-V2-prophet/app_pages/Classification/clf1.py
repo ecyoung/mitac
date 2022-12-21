@@ -236,6 +236,7 @@ def app():
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
                 mlflow.log_params(paramdist)
+                mlflow.sklearn.log_model(model, "model")
                 mlflow.log_metrics(metricsdict)
                 
 

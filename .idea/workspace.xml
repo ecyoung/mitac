@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AutoML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +48,11 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
