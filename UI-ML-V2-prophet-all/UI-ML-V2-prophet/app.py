@@ -38,8 +38,8 @@ def run_app():
     # from app_pages.PredictNextOrder.pno import PNO_Page
     # app.add_app(PNO_Page)
 
-    # from app_pages.PredictNextOrder2.pno import PNO2_Page
-    # app.add_app(PNO2_Page)
+    from app_pages.PredictNextOrder2.pno import PNO2_Page
+    app.add_app(PNO2_Page)
 
     from app_pages.config_page import ConfigPage
     app.add_app(ConfigPage)

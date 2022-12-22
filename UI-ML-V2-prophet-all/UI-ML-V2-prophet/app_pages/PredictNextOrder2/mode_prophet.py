@@ -155,19 +155,29 @@ class ModeProphet(RunMode):
             pred_result_list.append(res)
 
         df_pred_all = pd.concat(pred_result_list).reset_index()
-        df_pred_all.columns = ['ds', 'CustomerID', 'y']
+        df_pred_all = df_pred_all[['ds', 'CustomerID', 'y']]
 
         df_pred_all['y'].loc[df_pred_all['y'] < 0] = 0
 
         return df_pred_all
 
-    def plot_result(self):
+    def plot_result(self, dg: DataGroup):
+        df_pred_all = st.session_state[prophet_df_pred_all]
+        end_train = dg.get_train_end_month()
+        end_test = dg.get_predict_end_month()
+        df_real = st.session_state[prophet_df_frame]
+
+        cus_count = int(st.session_state[prophet_cus_count])
+        customers = list(df_real['CustomerID'].unique())[:cus_count]
+
         err_start = end_train - datetime.timedelta(days=14)
 
-        df_real = df_frame_no_filter.loc[(df_frame_no_filter['ds'] > err_start) & (df_frame_no_filter['ds'] <= end_test)]
-        # df_real = df_frame.loc[(df_frame['ds'] > err_start) & (df_frame['ds'] <= end_test)]
-        df_real = df_real[df_real['CustomerID'].isin(customers[:cus_count])]
-        df_real = df_real.sort_values(by=['CustomerID', 'ds'])
+        # df_real = df_frame_no_filter.loc[(df_frame_no_filter['ds'] > err_start) & (df_frame_no_filter['ds'] <= end_test)]
+        # # df_real = df_frame.loc[(df_frame['ds'] > err_start) & (df_frame['ds'] <= end_test)]
+        # df_real = df_real[df_real['CustomerID'].isin(customers[:cus_count])]
+        # df_real = df_real.sort_values(by=['CustomerID', 'ds'])
+        # df_real = df_real.loc[(df_real['ds'] > err_start) & (df_real['ds'] <= end_test)]
+        df_real = df_real.loc[df_real['CustomerID'].isin(customers)]
         df_pred = df_pred_all.loc[(df_pred_all['ds'] > err_start) & (df_pred_all['ds'] <= end_test)]
         df_pred = df_pred.sort_values(by=['CustomerID', 'ds'])
 
@@ -185,8 +195,11 @@ class ModeProphet(RunMode):
         # dp = condense_month(df_pred_all)
         # df = condense_month(df_frame)
 
+        customers = df_pred_all['CustomerID'].unique().tolist()
+
         dp = df_pred_all
-        df = df_frame
+        # df = df_frame
+        df = df_real
 
         for ax, cus in zip(axlist, customers[start_cus:start_cus + row * col]):
             p = dp[dp['CustomerID'] == cus]
@@ -196,9 +209,44 @@ class ModeProphet(RunMode):
             p.plot(kind='line', x='ds', y='y', color='blue', label='Forecast', ax=ax)
 
         plt.legend()
-        plt.show()
+        st.write('Predict vs Real')
+        st.pyplot(f)
+        # plt.show()
 
-    def get_error(y1, y2):
+        def condense_month(df:pd.DataFrame):
+            df = df[['ds', 'CustomerID', 'y', ]]
+            df['year'] = df['ds'].dt.strftime('%Y')
+            df['month'] = df['ds'].dt.strftime('%m')
+
+            df = df.groupby(['CustomerID', 'year', 'month']).agg({
+                'ds': np.min,
+                'y': np.sum,
+            }).reset_index()
+            df = df[['ds', 'CustomerID', 'y', ]]
+            return df
+
+        df_real_month = condense_month(df_real)
+        df_pred_month = condense_month(df_pred)
+
+        df_error = pd.DataFrame(columns=['date', 'mse', 'mae'])
+        for ds in df_pred_month['ds'].unique():
+            mse, mae = self.get_error(df_real_month.loc[df_real_month['ds'] == ds]['y'], df_pred_month.loc[df_pred_month['ds'] == ds]['y'])
+            print(ds, 'mse', mse, 'mae', mae)
+            df_error = df_error.append({'date': ds, 'mse': mse, 'mae': mae, }, ignore_index=True)
+        
+        st.write('Error:')
+        st.dataframe(df_error)
+        
+        
+
+        r = condense_month(df_real_month)
+        p = condense_month(df_pred_month)
+
+        r['pred'] = p['y']
+        # display(r)
+
+
+    def get_error(self, y1, y2):
         mse = round(np.sqrt(mean_squared_error(y1, y2)), 2)
         mae = round(mean_absolute_error(y1, y2), 2)
         return mse, mae
@@ -215,23 +263,16 @@ class ModeProphet(RunMode):
         # mse/mae for each month
         # real/pred for each customer
 
-        # for igroup, dg in enumerate(st.session_state[datagroup_manager].get_data_groups()):
-        #     dg: DataGroup
+        for igroup, dg in enumerate(st.session_state[datagroup_manager].get_data_groups()):
+            dg: DataGroup
+            self.plot_result(dg)
         #     df = dg.get_df()
         # if df is not None:
         #     st.dataframe(df.loc[:, df.columns != 'InvoiceMonth'])
         #     st.write(df.shape)
         #     st.write(df['CustomerID'].nunique())
-        self.plot_result()
-        df_real_month = condense_month(df_real)
-        df_pred_month = condense_month(df_pred)
+        # return
 
-        for ds in df_pred_month['ds'].unique():
-            mse, mae = get_error(df_real_month.loc[df_real_month['ds'] == ds]['y'], df_pred_month.loc[df_pred_month['ds'] == ds]['y'])
-            print(ds, 'mse', mse, 'mae', mae)
-
-        r = condense_month(df_real_month)
-        p = condense_month(df_pred_month)
-
-        r['pred'] = p['y']
-        display(r)
+    
+        
+       
