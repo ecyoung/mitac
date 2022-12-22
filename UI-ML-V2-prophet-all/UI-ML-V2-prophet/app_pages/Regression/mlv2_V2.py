@@ -273,6 +273,7 @@ def app():
                 runNameAsDatetime = str(datetime.datetime.now())
                 with mlflow.start_run(run_name=runNameAsDatetime):
                     mlflow.log_params(parameters)
+                    mlflow.sklearn.log_model(model, "model")
                     mlflow.log_metrics(metrics)
 
         else:
