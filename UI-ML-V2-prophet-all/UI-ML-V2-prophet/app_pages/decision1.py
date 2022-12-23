@@ -164,7 +164,6 @@ def app():
     min_samples_split = st.sidebar.slider(lang['min_samples_bf_split'], min_value=2, max_value=200, step=1, value=5)
     min_samples_leaf = st.sidebar.slider(lang['min_samples_in_leaf'], min_value=1, max_value=200, step=1, value=5)
     criterion = st.sidebar.selectbox(lang['split_criterion'], ['gini', 'entropy'])
-    mlflow.set_tracking_uri('mysql://mitac:mitac@localhost:3306/mlflow')
     mlflow.set_experiment('聯城化Decision_Tree')
     dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
                 'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
@@ -179,7 +178,7 @@ def app():
     with mlflow.start_run(run_name=decisionTreeName):
         dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
         graph = get_dt_graph(dt_f)
-        mlflow.sklearn.log_model(dt_f, "model")
+        mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         st.write(lang['decision_result'])
         st.image(graph.create_png(), width=1000)
         st.write("-" * 60)
