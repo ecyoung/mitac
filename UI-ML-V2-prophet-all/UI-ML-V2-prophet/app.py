@@ -18,12 +18,12 @@ def run():
 
     mlflow.set_tracking_uri('mysql://mitac:mitac@localhost:3306/mlflow')
 
-    namel = run_app()
-    return namel
+    run_app()
 
 def run_app():
 
     namel, auth_state, username = login_widget.login_feature()
+    st.session_state['namel'] = namel
 
     app = MultiApp()
 

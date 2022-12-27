@@ -26,6 +26,7 @@ from .clasi_algos import Models
 filterwarnings(action='ignore')
 
 
+
 class CLF1Page(AppPage):
     @staticmethod
     def _run_page():
@@ -235,7 +236,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                mlflow.set_tag("mlflow.user", name)
+                mlflow.set_tag("mlflow.user", st.session_state['namel'])
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)

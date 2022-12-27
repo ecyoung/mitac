@@ -1,34 +1,5 @@
 Traceback (most recent call last):
-  File "D:\1_projects\AutoML\UI-ML-V2-prophet-all\UI-ML-V2-prophet\app_pages\Classification\clf1.py", line 125, in run_model
-    mlflow.set_experiment(experiment_name='LogisticRegression')
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\fluent.py", line 110, in set_experiment
-    client = MlflowClient()
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\client.py", line 66, in __init__
-    self._tracking_client = TrackingServiceClient(final_tracking_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 51, in __init__
-    self.store
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 55, in store
-    return utils._get_store(self.tracking_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\utils.py", line 189, in _get_store
-    return _tracking_store_registry.get_store(store_uri, artifact_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\registry.py", line 39, in get_store
-    return self._get_store_with_resolved_uri(resolved_store_uri, artifact_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\registry.py", line 49, in _get_store_with_resolved_uri
-    return builder(store_uri=resolved_store_uri, artifact_uri=artifact_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\tracking\_tracking_service\utils.py", line 150, in _get_sqlalchemy_store
-    return SqlAlchemyStore(store_uri, artifact_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\store\tracking\sqlalchemy_store.py", line 128, in __init__
-    ] = mlflow.store.db.utils.create_sqlalchemy_engine_with_retry(db_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\store\db\utils.py", line 187, in create_sqlalchemy_engine_with_retry
-    engine = create_sqlalchemy_engine(db_uri)
-  File "D:\anaconda\envs\login\lib\site-packages\mlflow\store\db\utils.py", line 243, in create_sqlalchemy_engine
-    return sqlalchemy.create_engine(db_uri, pool_pre_ping=True, **pool_kwargs)
-  File "<string>", line 2, in create_engine
-  File "D:\anaconda\envs\login\lib\site-packages\sqlalchemy\util\deprecations.py", line 309, in warned
-    return fn(*args, **kwargs)
-  File "D:\anaconda\envs\login\lib\site-packages\sqlalchemy\engine\create.py", line 548, in create_engine
-    dbapi = dialect_cls.dbapi(**dbapi_args)
-  File "D:\anaconda\envs\login\lib\site-packages\sqlalchemy\dialects\mysql\mysqldb.py", line 163, in dbapi
-    return __import__("MySQLdb")
-ModuleNotFoundError: No module named 'MySQLdb'
+  File "D:\1_projects\AutoML\UI-ML-V2-prophet-all\UI-ML-V2-prophet\app_pages\Classification\clf1.py", line 120, in run_model
+    f1, classi_rep, y_pred, model = algo.log_reg(penalty=penalty, dual=dual, C=C, solver=solver, multi_class=multi_class)  # model instance
+TypeError: cannot unpack non-iterable NoneType object
 
