@@ -239,6 +239,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
+                st.write(json.load(Path(__file__).parent.parent / 'util/user.json'))
                 mlflow.set_tag("mlflow.user", json.load(Path(__file__).parent.parent / 'util/user.json'))
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
