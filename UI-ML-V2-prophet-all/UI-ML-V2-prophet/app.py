@@ -18,11 +18,12 @@ def run():
 
     mlflow.set_tracking_uri('mysql://mitac:mitac@localhost:3306/mlflow')
 
-    run_app()
+    namel = run_app()
+    return namel
 
 def run_app():
 
-    name, auth_state, username = login_widget.login_feature()
+    namel, auth_state, username = login_widget.login_feature()
 
     app = MultiApp()
 
@@ -52,8 +53,9 @@ def run_app():
 
     if auth_state:
         app.run()
+
     else:
         st.title('Please Login First')
 
 if __name__ == '__main__':
-    run()
+    name = run()
