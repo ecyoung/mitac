@@ -1,0 +1,10 @@
+credentials:
+  usernames:
+    YinC:
+      email: yinchen@mitac.com.tw
+      name: Yin Chen
+      password: '1234'
+    LeoC:
+      email:
+      name: Leo Chen
+      password: '1234'

@@ -5,6 +5,7 @@ import mlflow
 
 from app_pages.multiapp import MultiApp
 from util.config_setup import config_setup
+from pword import login_widget
 
 
 def run():
@@ -20,6 +21,8 @@ def run():
     run_app()
 
 def run_app():
+
+    name, auth_state, username = login_widget.login_feature()
 
     app = MultiApp()
 
@@ -47,8 +50,10 @@ def run_app():
     from app_pages.config_page import ConfigPage
     app.add_app(ConfigPage)
 
-    app.run()
-
+    if auth_state:
+        app.run()
+    else:
+        st.title('Please Login First')
 
 if __name__ == '__main__':
     run()

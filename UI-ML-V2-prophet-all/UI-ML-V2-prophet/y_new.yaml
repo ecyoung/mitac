@@ -1,0 +1,10 @@
+credentials:
+  usernames:
+    LeoC:
+      email: null
+      name: Leo Chen
+      password: $2b$12$xWtWKeP0rJQz/Ika.7XcOeZEREWdv0zKtDph9IddyLPyUtc0aei4a
+    YinC:
+      email: yinchen@mitac.com.tw
+      name: Yin Chen
+      password: $2b$12$y4n2peF/JTe4sM1Ea7ciwOfK90/diAN12tw.4YC0Of4ICeCNFjM9W
