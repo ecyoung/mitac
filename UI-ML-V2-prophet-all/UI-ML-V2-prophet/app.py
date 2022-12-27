@@ -4,7 +4,7 @@ from PIL import Image
 import mlflow
 
 from app_pages.multiapp import MultiApp
-from util.config_setup import config_setup
+from util.config_setup import config_setup, save_users
 from pword import login_widget
 
 
@@ -18,12 +18,14 @@ def run():
 
     mlflow.set_tracking_uri('mysql://mitac:mitac@localhost:3306/mlflow')
 
-    run_app()
+
+    namel = run_app()
+    save_users(namel)
+    st.write(namel)
 
 def run_app():
 
     namel, auth_state, username = login_widget.login_feature()
-    st.session_state['namel'] = namel
 
     app = MultiApp()
 
@@ -53,6 +55,7 @@ def run_app():
 
     if auth_state:
         app.run()
+        return namel
 
     else:
         st.title('Please Login First')

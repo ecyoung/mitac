@@ -14,12 +14,15 @@ from warnings import filterwarnings
 import mlflow
 import traceback
 from datetime import datetime
+import json
+from pathlib import Path
 
 from app_pages.app_page import AppPage
 from .classification_to_df import classification_report_to_dataframe
 from .my_plot_confusion_matrix import my_confusion_matrix
 from .split import Split
 from .clasi_algos import Models
+
 
 
 
@@ -111,7 +114,7 @@ def app():
             algo = Models(X_train, y_train, X_test, y_test, preprocessor)
             mlflow.end_run()
             if algo_c == 'Logistic Regression':
-                st.write(f'{lang["you_select"]} `Logistic Regression`.[{lang["read_more"]}](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)')
+                st.write(f'{lang["you_select"]} `Logistic Regression`.[{lang["read_more"]}]')
                 penalty = col1.selectbox(lang['penalty'], options=['l2', 'l1', 'none', 'elasticnet'], help=lang['penalty_help'])
                 dual = col2.selectbox(lang['dual'], options=[False, True], help=lang['dual_help'])
                 C = col1.slider(lang['c'], 1.0, 5.0, 0.25, help=lang['c_help'])
@@ -236,8 +239,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                st.write(st.session_state['namel'])
-                mlflow.set_tag("mlflow.user", st.session_state['namel'])
+                mlflow.set_tag("mlflow.user", json.load(Path(__file__).parent.parent / 'util/user.json'))
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)

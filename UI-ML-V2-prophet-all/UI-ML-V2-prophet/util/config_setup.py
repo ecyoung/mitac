@@ -3,6 +3,7 @@ from os import listdir
 from os.path import isfile, join
 import json
 import streamlit as st
+from pathlib import Path
 
 config_folder = 'config'
 lang_folder = f'{config_folder}/lang'
@@ -40,6 +41,11 @@ def save_config():
         return
     with open(config_filepath, 'w', encoding='utf-8') as f:
         f.write(j)
+
+def save_users(namel):
+    userFile = Path(__file__).parent / 'user.json'
+    with userFile.open('w', encoding='utf-8') as file:
+        file.write(namel)
 
 
 def get_lang_files():
