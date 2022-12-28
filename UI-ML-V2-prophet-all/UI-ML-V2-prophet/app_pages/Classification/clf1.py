@@ -41,7 +41,7 @@ class CLF1Page(AppPage):
 
 def app():
     lang = st.session_state['lang_config']['clf1']
-    st.title('Greetins, ' + st.session_state['login_name'])
+    login_user = st.session_state['login_name']
 
     # function for getting wider space on web page
     def _max_width_():
@@ -239,7 +239,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                mlflow.set_tag("mlflow.user", AppPage.get_user())
+                mlflow.set_tag("mlflow.user", login_user)
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)
