@@ -56,7 +56,7 @@ def run_app():
 
     if auth_state:
         app.run()
-        return namel
+
 
     else:
         st.title('Please Login First')

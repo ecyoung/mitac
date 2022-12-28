@@ -1,5 +1,4 @@
 import datetime
-
 import mlflow
 import seaborn as sns
 from app_pages.app_page import AppPage
@@ -40,6 +39,7 @@ st.cache(suppress_st_warning=True)
 
 def app():
     lang = st.session_state['lang_config']['mlv2_V2']
+    login_user = st.session_state['login_name']
 
     # function for getting wider space on web page
     def _max_width_():
@@ -271,7 +271,9 @@ def app():
                 st.text(lang['can_download_link'])
                 st.markdown(href, unsafe_allow_html=True)
                 runNameAsDatetime = str(datetime.datetime.now())
+#                The mlflow API
                 with mlflow.start_run(run_name=runNameAsDatetime):
+                    mlflow.set_tag("mlflow.user", login_user)
                     mlflow.log_params(parameters)
                     mlflow.sklearn.log_model(model, "model", registered_model_name='Regression')
                     mlflow.log_metrics(metrics)

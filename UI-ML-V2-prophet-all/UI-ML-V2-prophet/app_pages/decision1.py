@@ -39,6 +39,7 @@ class Decision1Page(AppPage):
 
 def app():
     lang = st.session_state['lang_config']['decision1']
+    login_user = st.session_state['login_name']
 
     # @st.cache(suppress_st_warning=True)
     max_depth = 5
@@ -170,12 +171,9 @@ def app():
 
     decisionTreeName = str(datetime.now())
 
-
-
-
-
-
+#   The mlflow API
     with mlflow.start_run(run_name=decisionTreeName):
+        mlflow.set_tag('mlflow.user', login_user)
         dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
         graph = get_dt_graph(dt_f)
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')

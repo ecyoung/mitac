@@ -236,7 +236,7 @@ def app():
             st.markdown(href, unsafe_allow_html=True)
             st.balloons()
 
-            # Get current time for run name
+            #   The mlflow API
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
                 mlflow.set_tag("mlflow.user", login_user)
