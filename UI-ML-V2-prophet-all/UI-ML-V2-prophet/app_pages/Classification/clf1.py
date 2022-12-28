@@ -39,6 +39,10 @@ class CLF1Page(AppPage):
     def get_name():
         return st.session_state['lang_config']['clf1']['name']
 
+    @staticmethod
+    def get_user():
+        return st.session_state['namel']
+
 
 def app():
     lang = st.session_state['lang_config']['clf1']
@@ -239,7 +243,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                mlflow.set_tag("mlflow.user", json.load(Path('util/user.json')))
+                mlflow.set_tag("mlflow.user", "YinCehn")
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)
