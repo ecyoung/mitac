@@ -41,6 +41,7 @@ class CLF1Page(AppPage):
 
 def app():
     lang = st.session_state['lang_config']['clf1']
+    st.title('Greetins, ' + st.session_state['login_name'])
 
     # function for getting wider space on web page
     def _max_width_():

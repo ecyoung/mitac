@@ -26,6 +26,7 @@ def run_app():
 
     namel, auth_state, username = login_widget.login_feature()
     st.session_state['login_name'] = namel
+    st.title('Greetins, '+ st.session_state['login_name'])
 
     app = MultiApp()
 
