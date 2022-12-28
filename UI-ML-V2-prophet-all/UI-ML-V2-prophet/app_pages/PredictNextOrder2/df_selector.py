@@ -4,6 +4,7 @@ import os
 from io import BytesIO
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 from util.time_util import measure_time
 from util.st_util import is_key_set
@@ -48,7 +49,7 @@ def __on_SC_changed(lang):
         # df = load_excel(file, sheet_names)
         # df.to_csv('SC_test.csv')
 
-        df = pd.read_csv('../data/pno/SC_all_201807_202207.csv')
+        df = pd.read_csv(Path('../data/pno/SC_all_201807_202207.csv'))
 
         df.rename(columns={'RepCust': 'CustomerID', 'ScNo': 'InvoiceNo', 'Qty': 'Quantity', 'ScDate': 'InvoiceDate', 'NetUPrice': 'UnitPrice', 'MarketRegion': 'Country'}, inplace=True)
         df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
@@ -81,7 +82,7 @@ def __on_filter_changed(lang):
     #     st.session_state[raw_filter_df] = df
     # df.to_csv('SC_filter.csv')
 
-    df = pd.read_csv('../data/pno/Filter_test.csv')
+    df = pd.read_csv(Path('../data/pno/Filter_test.csv'))
     st.session_state[raw_filter_df] = df
 
     st.session_state[filter_dict] = {
