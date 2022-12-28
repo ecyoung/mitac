@@ -82,6 +82,7 @@ def __on_filter_changed(lang):
     #     st.session_state[raw_filter_df] = df
     # df.to_csv('SC_filter.csv')
 
+    # df = pd.read_csv(Path('/data/pno/Filter_test.csv').parent.parent)
     df = pd.read_csv(Path('../data/pno/Filter_test.csv'))
     st.session_state[raw_filter_df] = df
 
