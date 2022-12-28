@@ -49,11 +49,7 @@ def __on_SC_changed(lang):
         # df = load_excel(file, sheet_names)
         # df.to_csv('SC_test.csv')
 
-<<<<<<< HEAD
         df = pd.read_csv(Path('data/pno/SC_all_201807_202207.csv'))
-=======
-        df = pd.read_csv(Path('../data/pno/SC_all_201807_202207.csv'))
->>>>>>> 937b49698e03a2e1cdff93aaab186e12e9e6ac75
 
         df.rename(columns={'RepCust': 'CustomerID', 'ScNo': 'InvoiceNo', 'Qty': 'Quantity', 'ScDate': 'InvoiceDate', 'NetUPrice': 'UnitPrice', 'MarketRegion': 'Country'}, inplace=True)
         df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
@@ -86,12 +82,9 @@ def __on_filter_changed(lang):
     #     st.session_state[raw_filter_df] = df
     # df.to_csv('SC_filter.csv')
 
-<<<<<<< HEAD
+
     df = pd.read_csv(Path('data/pno/Filter_test.csv'))
-=======
     # df = pd.read_csv(Path('/data/pno/Filter_test.csv').parent.parent)
-    df = pd.read_csv(Path('/home/abc/autoML/mitac/UI-ML-V2-prophet-all/data/pno/Filter_test.csv'))
->>>>>>> 937b49698e03a2e1cdff93aaab186e12e9e6ac75
     st.session_state[raw_filter_df] = df
 
     st.session_state[filter_dict] = {
