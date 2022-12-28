@@ -243,7 +243,7 @@ def app():
             # Get current time for run name
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                mlflow.set_tag("mlflow.user", "YinCehn")
+                mlflow.set_tag("mlflow.user", get_user())
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)
