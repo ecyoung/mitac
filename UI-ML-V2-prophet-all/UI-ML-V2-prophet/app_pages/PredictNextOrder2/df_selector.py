@@ -83,7 +83,7 @@ def __on_filter_changed(lang):
     # df.to_csv('SC_filter.csv')
 
     # df = pd.read_csv(Path('/data/pno/Filter_test.csv').parent.parent)
-    df = pd.read_csv(Path('../data/pno/Filter_test.csv'))
+    df = pd.read_csv(Path('/home/abc/autoML/mitac/UI-ML-V2-prophet-all/data/pno/Filter_test.csv'))
     st.session_state[raw_filter_df] = df
 
     st.session_state[filter_dict] = {
