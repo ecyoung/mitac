@@ -11,3 +11,8 @@ class AppPage:
     @staticmethod
     def get_name():
         return 'App Page'
+
+    @staticmethod
+    def get_user():
+        return st.session_state['login_name']
+

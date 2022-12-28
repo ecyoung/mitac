@@ -43,9 +43,7 @@ def save_config():
         f.write(j)
 
 def save_users(namel):
-    userFile = Path(__file__).parent / 'user.json'
-    with userFile.open('w', encoding='utf-8') as file:
-        file.write(namel)
+    st.session_state['loginUser'] = namel
 
 
 def get_lang_files():
