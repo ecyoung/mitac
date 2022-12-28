@@ -31,9 +31,8 @@ class ModeProphet(RunMode):
         st.number_input('Prophet Order', 0, 200, 20, 1, key=prophet_order)
 
     def run(self, do_update):
-        if do_update:
+        if do_update == True:
             self.__update()
-        self.__render()
 
     def __update(self):
         for igroup, dg in enumerate(st.session_state[datagroup_manager].get_data_groups()):
@@ -46,7 +45,7 @@ class ModeProphet(RunMode):
             st.dataframe(df_frame)
 
             df_pred_all = self.predict(df_frame)
-            st.session_state[prophet_df_pred_all] = df_pred_all
+            st.session_state['prophet_df_pred_all'] = df_pred_all
         
     def generate_result(self):
         pass

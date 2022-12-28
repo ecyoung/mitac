@@ -23,10 +23,11 @@ def run():
     # save_users(namel)
 
 def run_app():
-
+# Set login widget
     namel, auth_state, username = login_widget.login_feature()
     st.session_state['login_name'] = namel
     st.title('Greetins, ' + st.session_state['login_name'])
+    # st.title(st.session_state['prophet_df_pred_all'])
 
     app = MultiApp()
 
@@ -62,4 +63,4 @@ def run_app():
         st.title('Please Login First')
 
 if __name__ == '__main__':
-    name = run()
+    run()

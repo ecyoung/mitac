@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/df_selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/df_selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_prophet.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/mode_prophet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/pno.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/PredictNextOrder2/pno.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
