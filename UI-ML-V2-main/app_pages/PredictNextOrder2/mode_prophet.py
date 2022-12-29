@@ -46,7 +46,7 @@ class ModeProphet(RunMode):
             st.dataframe(df_frame)
 
             df_pred_all = self.predict(df_frame)
-            st.session_state[prophet_df_pred_all] = df_pred_all
+            st.session_state['prophet_df_pred_all'] = df_pred_all
         
     def generate_result(self):
         pass

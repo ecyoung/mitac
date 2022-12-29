@@ -31,8 +31,9 @@ class ModeProphet(RunMode):
         st.number_input('Prophet Order', 0, 200, 20, 1, key=prophet_order)
 
     def run(self, do_update):
-        if do_update == True:
+        if do_update:
             self.__update()
+            self.__render()
 
     def __update(self):
         for igroup, dg in enumerate(st.session_state[datagroup_manager].get_data_groups()):

@@ -63,7 +63,6 @@ def app():
 
         do_update = st.button(lang['start_analyze'])
         if do_update:
-            ModeProphet.__render()
             for datagroup in dm.get_data_groups():
                 datagroup.submit(st.session_state[raw_sc_df], st.session_state[raw_filter_df])
 
