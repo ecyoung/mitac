@@ -15,6 +15,7 @@ import base64
 import pickle
 from warnings import filterwarnings
 import traceback
+import requests
 
 
 from .reg_algos import Models
@@ -74,6 +75,14 @@ def app():
         try:
             if sample:
                 if name == 'california_housing':  # carlifornia housing dataset
+                    url = 'http://127.0.0.1:5000/dataset'
+                    myobj = {'data': 'california_housing'}
+                    # data=requests.post(url, data = myobj)
+                    # df, y=data.json()
+                    # print('df',df)
+                    # print('y',y)
+                    # df, y = data[0], data[1]
+
                     df, y = datasets.fetch_california_housing(as_frame=True, return_X_y=True)
                     df['Target'] = y
                     return df.sample(frac=0.5)
@@ -86,7 +95,7 @@ def app():
                 return df
 
         except Exception as ex:
-            print(str(ex))
+            print(str(ex), traceback(ex))
 
     # giving result by choosing dataset, custome or sample
     if file_upload is None:

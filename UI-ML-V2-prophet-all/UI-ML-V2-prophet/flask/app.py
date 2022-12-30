@@ -15,9 +15,9 @@ class NumpyArrayEncoder(JSONEncoder):
 
 
 @app.route("/dataset", methods=['POST','GET'])
-def hello():
+def dataset():
     print(len(datasets.load_diabetes(return_X_y=True)))
     if request.form['data']=='california_housing':
         return json.dumps(datasets.fetch_california_housing( return_X_y=True), cls=NumpyArrayEncoder)
-    if request.form['data']=='diabetes':
+    elif request.form['data']=='diabetes':
         return json.dumps(datasets.load_diabetes(return_X_y=True), cls=NumpyArrayEncoder)
