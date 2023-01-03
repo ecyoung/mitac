@@ -60,6 +60,7 @@ def run_app():
 #   Input predict one by one
     from app_pages.predict_pages import predict_single
     appPredict.add_app(predict_single.PredictPage)
+
 #   Input predict by a csv or ?
     from app_pages.predict_pages import predict_mutiple
     appPredict.add_app(predict_mutiple.PredictPage2)

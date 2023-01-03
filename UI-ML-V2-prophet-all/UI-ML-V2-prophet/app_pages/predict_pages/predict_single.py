@@ -17,8 +17,9 @@ class PredictPage(AppPage):
 
 def app():
     st.write('OK')
-    # connection = pyodbc.connect('DRIVER=MySQL ODBC 8.0 Unicode Driver;SERVER=localhost;PORT=3306;DATABASE=mitac;UID=mitac;PWD=mitac')
+    connection = pyodbc.connect('DRIVER=MySQL ODBC 8.0 Unicode Driver;SERVER=localhost;PORT=3306;DATABASE=mitac;UID=mitac;PWD=mitac')
     col1, col2 = st.columns(2)
     with col1:
         st.write("選擇Model")
+
 
