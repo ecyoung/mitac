@@ -11,7 +11,7 @@ class login_widget():
             _ = yaml.load(f, Loader=yaml.SafeLoader)
             # print(_['credentials'])
         authenticator = stauth.Authenticate(_['credentials'], cookie_name='theCookie', key='1234', cookie_expiry_days=10)
-        name, auth_state, username = authenticator.login('login', 'sidebar')
+        name, auth_state, username = authenticator.login('login', 'main')
         if auth_state:
             authenticator.logout('logout', 'sidebar')
             st.session_state['login_name'] = name
@@ -23,4 +23,5 @@ class login_widget():
 
         return name, auth_state, username
 
-login_widget.login_feature()
+
+

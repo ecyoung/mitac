@@ -12,9 +12,6 @@ class HomePage(AppPage):
     @staticmethod
     def get_name():
         return st.session_state['lang_config']['home']['name']
-    @staticmethod
-    def get_user():
-        return st.session_state['namel']
 
 
 def app():

@@ -7,12 +7,21 @@
     <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/pword.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/pword.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/pword.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/pword.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/y_new.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/y_new.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +40,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\1_projects\AutoML\UI-ML-V2-prophet-all\UI-ML-V2-prophet\app_pages\predict_pages" />
+      <recent name="D:\1_projects\AutoML\UI-ML-V2-prophet-all\UI-ML-V2-prophet\util" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +70,13 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

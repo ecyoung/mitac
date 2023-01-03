@@ -4,8 +4,9 @@ from PIL import Image
 import mlflow
 
 from app_pages.multiapp import MultiApp
-from util.config_setup import config_setup, save_users
-from pword import login_widget
+from util.config_setup import config_setup
+from util import pword
+from util import sidabar_auth
 
 
 def run():
@@ -24,7 +25,7 @@ def run():
 
 def run_app():
 # Set login widget
-    namel, auth_state, username = login_widget.login_feature()
+    namel, auth_state, username = pword.login_widget.login_feature()
 
 
     # st.title(st.session_state['prophet_df_pred_all'])
@@ -55,9 +56,17 @@ def run_app():
     from app_pages.config_page import ConfigPage
     app.add_app(ConfigPage)
 
-    if auth_state:
-        app.run()
+    appPredict = MultiApp()
+    from app_pages.predict_pages import predict_page
+    appPredict.add_app(predict_page.PredictPage)
 
+    if auth_state:
+        selected = sidabar_auth.authenticat(auth_state).Sidebar_control()
+        if selected == 'Train':
+            app.run()
+
+        elif selected == 'Test':
+            appPredict.run()
 
     else:
         st.title('Please Login First')
