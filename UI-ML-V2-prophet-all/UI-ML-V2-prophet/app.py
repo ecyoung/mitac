@@ -57,8 +57,12 @@ def run_app():
     app.add_app(ConfigPage)
 
     appPredict = MultiApp()
-    from app_pages.predict_pages import predict_page
-    appPredict.add_app(predict_page.PredictPage)
+#   Input predict one by one
+    from app_pages.predict_pages import predict_single
+    appPredict.add_app(predict_single.PredictPage)
+#   Input predict by a csv or ?
+    from app_pages.predict_pages import predict_mutiple
+    appPredict.add_app(predict_mutiple.PredictPage2)
 
     if auth_state:
         selected = sidabar_auth.authenticat(auth_state).Sidebar_control()

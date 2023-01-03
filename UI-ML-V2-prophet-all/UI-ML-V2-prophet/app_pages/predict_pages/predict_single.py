@@ -9,7 +9,7 @@ class PredictPage(AppPage):
 
     @staticmethod
     def get_name():
-        return 'Predict_page'
+        return 'Predict-單筆式'
 
     def __init__(self, testPrint):
         self.testPrint = testPrint

@@ -15,7 +15,7 @@ class login_widget():
         if auth_state:
             authenticator.logout('logout', 'sidebar')
             st.session_state['login_name'] = name
-            st.title('Greetins, ' + name)
+            st.title('Greetings, ' + name)
         elif auth_state == False:
             st.sidebar.error('Username/password is incorrect')
         elif auth_state == None:
