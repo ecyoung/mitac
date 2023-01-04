@@ -28,4 +28,5 @@ def app():
     st.write("訓練紀錄")
     df = pd.read_sql(sql, connection)
     run_choose = df['name'].unique()
-    st.write(run_choose)
+    df2 = pd.merge(run_choose, df, on='run_uuid')
+    st.write(df2)
