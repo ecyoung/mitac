@@ -38,6 +38,8 @@ def app():
             st.write('')
             st.write('')
             st.write('')
+            st.write('')
+            st.write('')
     with col2:
         for j in range(5):
             df_show = df[df['name']==run_choose[j]]
