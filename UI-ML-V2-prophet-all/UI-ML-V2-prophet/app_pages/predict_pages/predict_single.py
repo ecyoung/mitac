@@ -47,7 +47,7 @@ def app():
             st.write('')
             st.write('')
     with col2:
-        for j in range(5):
+        for j in range(2):
             df_show = df[df['name']==run_choose[j]]
             df_show = df_show[['key1', 'value1', 'key', 'value']]
             df_param = df_show[['key1', 'value1']]
