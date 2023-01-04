@@ -1,6 +1,6 @@
 import streamlit as st
 from app_pages.app_page import AppPage
-import pyodbc
+import pymysql
 
 class PredictPage(AppPage):
     @staticmethod
@@ -17,7 +17,7 @@ class PredictPage(AppPage):
 
 def app():
     st.write('OK')
-    connection = pyodbc.connect('DRIVER=MySQL ODBC 8.0 Unicode Driver;SERVER=localhost;PORT=3306;DATABASE=mitac;UID=mitac;PWD=mitac')
+    connection = pymysql.connect(host="127.0.0.1", port=3306, user="mitac", passwd="mitac", db='mlflow')
     col1, col2 = st.columns(2)
     with col1:
         st.write("選擇Model")
