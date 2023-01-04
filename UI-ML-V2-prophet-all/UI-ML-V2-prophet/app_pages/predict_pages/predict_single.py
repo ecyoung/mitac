@@ -1,3 +1,4 @@
+import pandas as pd
 import streamlit as st
 from app_pages.app_page import AppPage
 import pymysql
@@ -18,8 +19,13 @@ class PredictPage(AppPage):
 def app():
     st.write('OK')
     connection = pymysql.connect(host="127.0.0.1", port=3306, user="mitac", passwd="mitac", db='mlflow')
-    col1, col2 = st.columns(2)
-    with col1:
-        st.write("選擇Model")
-
-
+    sql = '''select a.run_uuid, a.name, a.user_id, b.key, b.value, c.key, c.value from mlflow.runs a, mlflow.params b, mlflow.metrics c
+            where name like '2023%'
+    and a.run_uuid = b.run_uuid
+    and a.run_uuid = c.run_uuid
+    order by a.start_time desc
+    '''
+    st.write("訓練紀錄")
+    df = pd.read_sql(sql, connection)
+    run_choose = df['name'].unique()
+    st.write(run_choose)
