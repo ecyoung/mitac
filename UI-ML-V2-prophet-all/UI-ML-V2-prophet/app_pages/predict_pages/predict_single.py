@@ -30,8 +30,14 @@ def app():
     col1, col2 = st.columns(2)
     with col1:
         run_choose = df['name'].unique()
-        for i in range(5):
+        for i in range(2):
             st.write(run_choose[i])
+            st.write('')
+            st.write('')
+            st.write('')
+            st.write('')
+            st.write('')
+            st.write('')
             st.write('')
             st.write('')
             st.write('')
