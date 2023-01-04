@@ -39,4 +39,4 @@ def app():
     with col2:
         for j in range(5):
             df_show = df[df['name']==run_choose[j]]
-            st.write(df_show.unique())
+            st.write(df_show.drop_duplicates())
