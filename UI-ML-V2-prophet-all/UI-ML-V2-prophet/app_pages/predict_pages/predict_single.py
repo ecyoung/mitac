@@ -40,4 +40,7 @@ def app():
         for j in range(5):
             df_show = df[df['name']==run_choose[j]]
             df_show = df_show[['key1', 'value1', 'key', 'value']]
-            st.write(df_show.drop_duplicates())
+            df_param = df_show[['key1', 'value1']]
+            df_metrics = df_show[['key', 'value']]
+            st.write(df_param.drop_duplicates())
+            st.write(df_metrics.drop_duplicates())
