@@ -36,6 +36,8 @@ def app():
             st.write('')
             st.write('')
             st.write('')
+            st.write('')
+            st.write('')
     with col2:
         for j in range(5):
             df_show = df[df['name']==run_choose[j]]
@@ -44,3 +46,4 @@ def app():
             df_metrics = df_show[['key', 'value']]
             st.write(df_param.drop_duplicates())
             st.write(df_metrics.drop_duplicates())
+            st.write('')
