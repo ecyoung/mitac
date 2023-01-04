@@ -27,6 +27,16 @@ def app():
     '''
     st.write("訓練紀錄")
     df = pd.read_sql(sql, connection)
-    run_choose = df['name'].unique()
-    df2 = pd.merge(run_choose, df, on='run_uuid')
-    st.write(df2)
+    col1, col2 = st.columns(2)
+    with col1:
+        run_choose = df['name'].unique()
+        for i in range(5):
+            st.write(run_choose[i])
+            st.write('')
+            st.write('')
+            st.write('')
+            st.write('')
+    with col2:
+        for j in range(5):
+            df_show = df[df['run_uuid']==run_choose[j]]
+            st.write('df_show')
