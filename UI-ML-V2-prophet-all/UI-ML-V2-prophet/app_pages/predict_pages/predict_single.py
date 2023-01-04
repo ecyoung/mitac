@@ -39,4 +39,4 @@ def app():
     with col2:
         for j in range(5):
             df_show = df[df['run_uuid']==run_choose[j]]
-            st.write('df_show')
+            st.write(df_show)
