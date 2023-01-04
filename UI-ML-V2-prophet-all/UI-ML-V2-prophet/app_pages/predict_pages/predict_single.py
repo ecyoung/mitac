@@ -19,7 +19,7 @@ class PredictPage(AppPage):
 def app():
     st.write('OK')
     connection = pymysql.connect(host="127.0.0.1", port=3306, user="mitac", passwd="mitac", db='mlflow')
-    sql = '''select a.run_uuid, a.name, a.user_id, b.key, b.value, c.key, c.value from mlflow.runs a, mlflow.params b, mlflow.metrics c
+    sql = '''select a.run_uuid, a.name, a.user_id, b.key key1, b.value value1, c.key, c.value from mlflow.runs a, mlflow.params b, mlflow.metrics c
             where name like '2023%'
     and a.run_uuid = b.run_uuid
     and a.run_uuid = c.run_uuid
@@ -39,4 +39,5 @@ def app():
     with col2:
         for j in range(5):
             df_show = df[df['name']==run_choose[j]]
+            df_show = df_show[['key1', 'value1', 'key', 'value']]
             st.write(df_show.drop_duplicates())
