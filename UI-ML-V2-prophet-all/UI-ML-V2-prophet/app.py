@@ -25,7 +25,6 @@ def run_app():
 # Set login widget
     namel, auth_state, username = pword.login_widget.login_feature()
 
-
     # st.title(st.session_state['prophet_df_pred_all'])
 
     app = MultiApp()

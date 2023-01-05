@@ -17,7 +17,7 @@ class login_widget():
             authenticator.logout('logout', 'sidebar')
             st.session_state['login_name'] = name
             st.title('Greetings, ' + name)
-            mlflow.set_tag('mlflow.user', 'login_user')
+            mlflow.set_tag('mlflow.user', username)
         elif auth_state == False:
             st.sidebar.error('Username/password is incorrect')
         elif auth_state == None:

@@ -157,6 +157,7 @@ def app():
         st.write(lang['negative_predictive_power'], round(100 * negativePredictivePower, 3), '%')
 
         st.write("-"*100)
+        return train_ACC, test_ACC
 
     max_depth = st.sidebar.slider(lang['max_depth'], min_value=1, max_value=25, step=1, value=5)
     max_leaf_nodes = st.sidebar.slider(lang['max_leaves'], min_value=2, max_value=100, step=1, value=100)
@@ -166,7 +167,6 @@ def app():
     mlflow.set_experiment('聯成化Decision_Tree')
     dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
                 'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
-    # dtmetrics = {'train_accuracy': train_ACC, 'test_accuracy': test_ACC}
 
     decisionTreeName = str(datetime.now())
 
@@ -175,9 +175,10 @@ def app():
     st.write(lang['decision_result'])
     st.image(graph.create_png(), width=1000)
     st.write("-" * 60)
-    evaluate_model(dt_f)
-    mlflow.end_run()
+    train_ACC, test_ACC = evaluate_model(dt_f)
+
     #   The mlflow API
+    mlflow.end_run()
     with mlflow.start_run(run_name=decisionTreeName):
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         mlflow.log_params(dtparams)
