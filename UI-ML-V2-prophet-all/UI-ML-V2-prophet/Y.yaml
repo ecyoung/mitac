@@ -8,3 +8,7 @@ credentials:
       email:
       name: Leo Chen
       password: '1234'
+    cclin:
+      email: cclinmit@mitac.com.tw
+      name: Chi-cheng Lin
+      password: '1234'

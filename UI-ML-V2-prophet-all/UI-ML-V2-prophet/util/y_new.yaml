@@ -8,3 +8,7 @@ credentials:
       email: yinchen@mitac.com.tw
       name: Yin Chen
       password: $2b$12$y4n2peF/JTe4sM1Ea7ciwOfK90/diAN12tw.4YC0Of4ICeCNFjM9W
+    cclin:
+      email: cclinmit@mitac.com.tw
+      name: Chi-cheng Lin
+      password: $2b$12$XArLeLidT9RvS9gV5cX0uu1Mws.LKlIF1xN.WkqGp3Hf4OpHiNMAO

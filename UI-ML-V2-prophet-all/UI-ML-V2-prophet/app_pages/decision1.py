@@ -179,7 +179,8 @@ def app():
 
     #   The mlflow API
     mlflow.end_run()
-    with mlflow.start_run(run_name=decisionTreeName):
+    nameForRunName = str(datetime.now(timezone(timedelta(hours=8))))
+    with mlflow.start_run(run_name=nameForRunName):
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         mlflow.log_params(dtparams)
         mlflow.set_tag('mlflow.user', st.session_state['log_user'])

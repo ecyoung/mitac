@@ -13,7 +13,7 @@ import base64
 from warnings import filterwarnings
 import mlflow
 import traceback
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import json
 from pathlib import Path
 
@@ -237,7 +237,7 @@ def app():
             st.balloons()
 
             #   The mlflow API
-            nameForRunName = str(datetime.now())
+            nameForRunName = str(datetime.now(timezone(timedelta(hours=8))))
             with mlflow.start_run(run_name=nameForRunName):
                 mlflow.set_tag("mlflow.user", st.session_state['log_user'])
                 mlflow.log_params(paramdist)

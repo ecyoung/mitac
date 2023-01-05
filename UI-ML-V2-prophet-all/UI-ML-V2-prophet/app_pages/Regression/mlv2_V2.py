@@ -272,7 +272,8 @@ def app():
                 st.markdown(href, unsafe_allow_html=True)
                 runNameAsDatetime = str(datetime.datetime.now())
 #                The mlflow API
-                with mlflow.start_run(run_name=runNameAsDatetime):
+                nameForRunName = str(datetime.now(timezone(timedelta(hours=8))))
+                with mlflow.start_run(run_name=nameForRunName):
                     mlflow.set_tag("mlflow.user", st.session_state['log_user'])
                     mlflow.log_params(parameters)
                     mlflow.sklearn.log_model(model, "model", registered_model_name='Regression')
