@@ -182,6 +182,7 @@ def app():
     with mlflow.start_run(run_name=decisionTreeName):
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         mlflow.log_params(dtparams)
+        mlflow.set_tag('mlflow.user', st.session_state['log_user'])
         mlflow.log_metric('train_accuracy', train_ACC)
         mlflow.log_metric('test_accuracy', test_ACC)
 
