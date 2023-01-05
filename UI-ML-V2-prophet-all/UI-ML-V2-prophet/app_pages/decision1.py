@@ -112,7 +112,6 @@ def app():
         y_test_pred = dt_classifier.predict(X_test)
         st.write(lang['train_performance'])
         train_ACC = 100 * np.round(accuracy_score(y_train, y_train_pred), 3)
-        mlflow.log_metric('train_accuracy', train_ACC)
         st.write(lang['train_accuracy'], train_ACC)
         st.write(lang['confusion_matrix'])
         confusion = confusion_matrix(y_train, y_train_pred)
@@ -136,7 +135,6 @@ def app():
         st.write("-"*60)
         st.write(lang['test_performance'])
         test_ACC =  100 * np.round(accuracy_score(y_test, y_test_pred), 3)
-        mlflow.log_metric('test_accuracy', test_ACC)
         st.write(lang['train_accuracy'], test_ACC)
         st.write(lang['confusion_matrix'])
         confusion = confusion_matrix(y_test, y_test_pred)
@@ -168,10 +166,10 @@ def app():
     mlflow.set_experiment('聯成化Decision_Tree')
     dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
                 'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
+    # dtmetrics = {'train_accuracy': train_ACC, 'test_accuracy': test_ACC}
 
     decisionTreeName = str(datetime.now())
 
-#   The mlflow API
     dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
     graph = get_dt_graph(dt_f)
     st.write(lang['decision_result'])
@@ -179,6 +177,10 @@ def app():
     st.write("-" * 60)
     evaluate_model(dt_f)
     mlflow.end_run()
+    #   The mlflow API
     with mlflow.start_run(run_name=decisionTreeName):
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         mlflow.log_params(dtparams)
+        mlflow.log_metric('train_accuracy', train_ACC)
+        mlflow.log_metric('test_accuracy', test_ACC)
+
