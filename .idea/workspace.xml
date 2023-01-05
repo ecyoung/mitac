@@ -7,11 +7,8 @@
     <list default="true" id="b67f9813-5dae-409f-965a-98a31dbbdcc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/Y.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/Y.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Regression/mlv2_V2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/decision1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/time_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/time_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/user.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/y_new.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/UI-ML-V2-prophet-all/UI-ML-V2-prophet/util/y_new.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
