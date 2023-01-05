@@ -239,7 +239,7 @@ def app():
             #   The mlflow API
             nameForRunName = str(datetime.now())
             with mlflow.start_run(run_name=nameForRunName):
-                mlflow.set_tag("mlflow.user", login_user)
+                mlflow.set_tag("mlflow.user", st.session_state['log_user'])
                 mlflow.log_params(paramdist)
                 mlflow.sklearn.log_model(model, "model", registered_model_name='Classification')
                 mlflow.log_metrics(metricsdict)

@@ -273,7 +273,7 @@ def app():
                 runNameAsDatetime = str(datetime.datetime.now())
 #                The mlflow API
                 with mlflow.start_run(run_name=runNameAsDatetime):
-                    mlflow.set_tag("mlflow.user", login_user)
+                    mlflow.set_tag("mlflow.user", st.session_state['log_user'])
                     mlflow.log_params(parameters)
                     mlflow.sklearn.log_model(model, "model", registered_model_name='Regression')
                     mlflow.log_metrics(metrics)
