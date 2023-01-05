@@ -18,7 +18,7 @@ class PredictPage(AppPage):
 
 def app():
     st.write('OK')
-    connection = pymysql.connect(host="127.0.0.1", port=3306, user="mitac", passwd="mitac", db='mlflow')
+    connection = pymysql.connect(host="192.168.24.39", port=3306, user="mitac", passwd="mitac", db='mlflow')
     sql = '''select a.run_uuid, a.name, a.user_id, b.key key1, b.value value1, c.key, c.value from mlflow.runs a, mlflow.params b, mlflow.metrics c
             where name like '2023%'
     and a.run_uuid = b.run_uuid
