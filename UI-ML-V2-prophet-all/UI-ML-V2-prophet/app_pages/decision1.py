@@ -173,7 +173,6 @@ def app():
 
 #   The mlflow API
     with mlflow.start_run(run_name=decisionTreeName):
-        mlflow.set_tag('mlflow.user', 'login_user')
         dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
         graph = get_dt_graph(dt_f)
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
