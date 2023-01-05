@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit_authenticator as stauth
 from pathlib import Path
 import yaml
+import mlflow
 
 class login_widget():
     @staticmethod
@@ -16,6 +17,7 @@ class login_widget():
             authenticator.logout('logout', 'sidebar')
             st.session_state['login_name'] = name
             st.title('Greetings, ' + name)
+            mlflow.set_tag('mlflow.user', 'login_user')
         elif auth_state == False:
             st.sidebar.error('Username/password is incorrect')
         elif auth_state == None:
