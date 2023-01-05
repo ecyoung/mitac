@@ -172,6 +172,7 @@ def app():
     decisionTreeName = str(datetime.now())
 
 #   The mlflow API
+    mlflow.end_run()
     with mlflow.start_run(run_name=decisionTreeName):
         mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
         mlflow.log_params(dtparams)
