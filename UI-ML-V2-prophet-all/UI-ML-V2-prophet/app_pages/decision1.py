@@ -172,13 +172,13 @@ def app():
     decisionTreeName = str(datetime.now())
 
 #   The mlflow API
-    mlflow.end_run()
-    with mlflow.start_run(run_name=decisionTreeName):
-        mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
-        mlflow.log_params(dtparams)
     dt_f = classify(max_depth, max_leaf_nodes, min_samples_split, min_samples_leaf, criterion)
     graph = get_dt_graph(dt_f)
     st.write(lang['decision_result'])
     st.image(graph.create_png(), width=1000)
     st.write("-" * 60)
     evaluate_model(dt_f)
+    mlflow.end_run()
+    with mlflow.start_run(run_name=decisionTreeName):
+        mlflow.sklearn.log_model(dt_f, "model", registered_model_name='聯成化Desicion_Tree')
+        mlflow.log_params(dtparams)
