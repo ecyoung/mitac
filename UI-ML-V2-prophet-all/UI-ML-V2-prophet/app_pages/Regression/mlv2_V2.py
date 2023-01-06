@@ -16,6 +16,8 @@ import pickle
 from warnings import filterwarnings
 import traceback
 from datetime import datetime, timezone, timedelta
+import requests
+import json
 
 
 from .reg_algos import Models
@@ -36,6 +38,8 @@ class MLV2_V2_Page(AppPage):
 
 
 st.cache(suppress_st_warning=True)
+
+
 
 
 def app():
@@ -75,7 +79,17 @@ def app():
         try:
             if sample:
                 if name == 'california_housing':  # carlifornia housing dataset
-                    df, y = datasets.fetch_california_housing(as_frame=True, return_X_y=True)
+                    url = 'http://127.0.0.1:5001/dataset'
+                    myobj = {'data': 'california_housing'}
+                    data=requests.post(url, data = myobj)
+                    print('data',type(json.loads(data.text)))
+                    df, y=json.loads(data.text)
+                    df=pd.DataFrame.from_dict(df)
+                    y=pd.DataFrame.from_dict(y)
+                    # st.write(temp1)
+                    # st.write(temp2)
+                    # df, y=data.json()
+                    # df, y = datasets.fetch_california_housing(as_frame=True, return_X_y=True)
                     df['Target'] = y
                     return df.sample(frac=0.5)
                 elif name == 'diabetes':  # diabetes dataset
