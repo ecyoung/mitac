@@ -17,41 +17,21 @@ class PredictPage(AppPage):
         st.write(testPrint)
 
 def app():
-    st.write('OK')
     connection = pymysql.connect(host="192.168.24.39", port=3306, user="mitac", passwd="mitac", db='mlflow')
-    sql = '''select a.run_uuid, a.name, a.user_id, b.key key1, b.value value1, c.key, c.value from mlflow.runs a, mlflow.params b, mlflow.metrics c
-            where name like '2023%'
-    and a.run_uuid = b.run_uuid
-    and a.run_uuid = c.run_uuid
-    order by a.start_time desc
-    '''
     st.write("訓練紀錄")
-    df = pd.read_sql(sql, connection)
-    col1, col2 = st.columns(2)
-    with col1:
-        run_choose = df['name'].unique()
-        for i in range(2):
-            st.write(run_choose[i])
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-            st.write('')
-    with col2:
-        for j in range(2):
-            df_show = df[df['name']==run_choose[j]]
-            df_show = df_show[['key1', 'value1', 'key', 'value']]
-            df_param = df_show[['key1', 'value1']]
-            df_metrics = df_show[['key', 'value']]
-            st.write(df_param.drop_duplicates())
-            st.write(df_metrics.drop_duplicates())
-            st.write('')
+    with st.container():
+        sql_runs = '''
+            select a.run_uuid, a.name, a.experiment_id, b.name exp_name from mlflow.runs a, mlflow.experiments b
+            where a.experiment_id = b.experiment_id
+            order by a.start_time desc
+            limit 10
+            '''
+        df_runs = pd.read_sql(sql_runs, connection)
+        radio_items = df_runs.head[['name', 'exp_name']]
+        opts = []
+        for j, k in df_runs.values:
+            opt = j + " " + k
+            opts += opt
+        opts = tuple(opts)
+        st.radio('選擇訓練Model', opts)
+
