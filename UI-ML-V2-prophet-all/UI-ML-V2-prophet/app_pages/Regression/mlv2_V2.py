@@ -1,4 +1,3 @@
-import datetime
 import mlflow
 import seaborn as sns
 from app_pages.app_page import AppPage
@@ -285,7 +284,7 @@ def app():
                 href = f'<a href="data:file/output_model;base64,{b64}" download="model.pkl">{lang["download_link"]}</a>'
                 st.text(lang['can_download_link'])
                 st.markdown(href, unsafe_allow_html=True)
-                runNameAsDatetime = str(datetime.datetime.now())
+                runNameAsDatetime = str(datetime.now())
 #                The mlflow API
                 nameForRunName = str(datetime.now(timezone(timedelta(hours=8))))
                 with mlflow.start_run(run_name=nameForRunName):
