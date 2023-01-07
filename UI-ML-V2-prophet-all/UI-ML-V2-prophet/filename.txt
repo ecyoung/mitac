@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/root/streamlit/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py", line 123, in run_model
-    f1, classi_rep, y_pred, model = algo.log_reg(penalty=penalty, dual=dual, C=C, solver=solver, multi_class=multi_class)  # model instance
+  File "/root/streamlit/UI-ML-V2-prophet-all/UI-ML-V2-prophet/app_pages/Classification/clf1.py", line 160, in run_model
+    f1, classi_rep, y_pred, model = algo.svc(C=C, kernel=kernel, degree=degree, coef0=coefo)
 TypeError: cannot unpack non-iterable NoneType object
 

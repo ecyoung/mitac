@@ -23,7 +23,8 @@ class PredictPage(AppPage):
 def app():
     url_return_log = 'http://127.0.0.1:5001/returnMethod'
     # Get training history of login user
-    passobj = {'user': st.session_state['log_user']}
+    submit = False
+    passobj = {'user': st.session_state['log_user'], 'submit': submit}
     run_log = rq.post(url_return_log, data=passobj)
     mainJ, paramsJ, metricsJ = json.loads(run_log.text)
 
@@ -54,3 +55,7 @@ def app():
                 metrics_show = metrics[metrics['run_uuid'] == id].drop('run_uuid', axis=1)
                 st.write(metrics_show)
 
+        if st.button('Choose'):
+            passobj['submit'] = id
+            st.write('OK')
+            # _ = rq.post(url_return_log, data=passobj)
