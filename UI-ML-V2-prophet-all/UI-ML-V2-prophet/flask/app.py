@@ -25,3 +25,6 @@ def dataset():
         return result
     elif request.form['data']=='diabetes':
         return json.dumps(datasets.load_diabetes(return_X_y=True), cls=NumpyArrayEncoder)
+
+@app.route('/returnMethod/', methods=['POST', 'GET'])
+def return_method():

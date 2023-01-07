@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 from app_pages.app_page import AppPage
 import pymysql
+import requests as rq
 
 class PredictPage(AppPage):
     @staticmethod
@@ -59,3 +60,8 @@ def app():
                     st.write(df_metrics)
                 if st.button('選擇'):
                     st.write('OK')
+
+def app():
+    url_return_method = '127.0.0.1:5001/returnMethod'
+    # Get training history of login user
+    passobj = {'user': st.session_state['']}
