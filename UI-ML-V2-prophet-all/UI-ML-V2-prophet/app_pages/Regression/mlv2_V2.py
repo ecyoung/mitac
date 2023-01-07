@@ -92,7 +92,14 @@ def app():
                     df['Target'] = y
                     return df.sample(frac=0.5)
                 elif name == 'diabetes':  # diabetes dataset
-                    df, y = datasets.load_diabetes(return_X_y=True, as_frame=True)
+                    url = 'http://127.0.0.1:5001/dataset'
+                    myobj = {'data': 'diabetes'}
+                    data=requests.post(url, data = myobj)
+                    print('data',type(json.loads(data.text)))
+                    df, y=json.loads(data.text)
+                    df=pd.DataFrame.from_dict(df)
+                    y=pd.DataFrame.from_dict(y)
+                    # df, y = datasets.load_diabetes(return_X_y=True, as_frame=True)
                     df['Target'] = y  # adding target column
                     return df.sample(frac=0.5)
             if custome:
