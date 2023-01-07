@@ -36,3 +36,21 @@ def app():
         show = tuple(main['show'])
         selected = st.radio('選擇訓練Model', show)
 
+    if selected:
+        # Get selected id
+        select_name = selected.split(',')[0]
+        id = main[main['name'] == select_name]['id'].values[0]
+        with st.container():
+            st.markdown("### Model參數 ###")
+            subcol1, subcol2 = st.columns(2)
+            with subcol1:
+                st.markdown("#### Parameters ####")
+                params = pd.read_json(paramsJ)
+                params_show = params[params['run_uuid'] == id].drop('run_uuid', axis=1)
+                st.write(params_show)
+            with subcol2:
+                st.markdown("#### Scores ####")
+                metrics = pd.read_json(metricsJ)
+                metrics_show = metrics[metrics['run_uuid'] == id].drop('run_uuid', axis=1)
+                st.write(metrics_show)
+

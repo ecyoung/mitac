@@ -41,7 +41,7 @@ def return_method():
     select a.run_uuid id, a.name, c.name expNm from mlflow.runs a, mlflow.tags b, mlflow.experiments c
     where a.run_uuid = b.run_uuid
     and a.experiment_id = c.experiment_id
-    and b.value = '""" + user + "'"
+    and b.value = '""" + user + "' order by a.start_time desc"
     df_main = read_sql(sql_runs, connection)
     df_mainJ = df_main.to_json()
 
