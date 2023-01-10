@@ -74,7 +74,7 @@ def return_method():
 
 @app.route('/decisiontree', methods=['GET', 'POST'])
 def decisionTree():
-    mlflow.set_tracking_uri('mysql://mitac:mitac@192.168.24.39:3306/mlflow')
+    mlflow.set_tracking_uri('mysql://mitac:mitac@192.168.24.39/mlflow')
 
     params = request.form['params']
     data = request.form['data']
@@ -101,6 +101,7 @@ def decisionTree():
     test_return = [train_ACC, test_ACC]
 
     # mlflow
+    mlflow.set_experiment('聯成化Decision_Tree')
     dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
                  'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
     dtmatrics = {'train_accuracy': train_ACC, 'test_accuracy':test_ACC}
