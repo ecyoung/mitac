@@ -1,0 +1,15 @@
+artifact_uri: file:///root/streamlit/UI-ML-V2-prophet-all/UI-ML-V2-prophet/flask/mlruns/0/e7f31a8b17344c92a7bb3efe393800ee/artifacts
+end_time: 1673327191183
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e7f31a8b17344c92a7bb3efe393800ee
+run_name: '2023-01-10 13:06:28.449286+08:00'
+run_uuid: e7f31a8b17344c92a7bb3efe393800ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1673327188527
+status: 3
+tags: []
+user_id: root

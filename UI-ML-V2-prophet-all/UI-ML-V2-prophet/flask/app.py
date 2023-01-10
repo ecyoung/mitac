@@ -5,6 +5,13 @@ from flask import Flask, request
 from json import JSONEncoder
 from pymysql import connect
 from pandas import read_sql
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+import numpy as np
+import mlflow
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
 # from flask_jsonpify import jsonpify
 import json
 app = Flask(__name__)
@@ -63,6 +70,51 @@ def return_method():
 
     run_msg = [df_mainJ, df_paramsJ, df_metricsJ]
     return run_msg
+
+
+@app.route('/decisiontree', methods=['GET', 'POST'])
+def decisionTree():
+    mlflow.set_tracking_uri('mysql://mitac:mitac@192.168.24.39:3306/mlflow')
+
+    params = request.form['params']
+    data = request.form['data']
+    user = request.form['user']
+    df = pd.read_json(data, encoding='utf-8')
+    X = df.drop(['MonthGrade', 'BU', 'RepCust'], axis=1)
+    y = df['MonthGrade'].copy()
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, random_state=42)
+    params1 = eval(params)
+    max_depth = params1[0]
+    max_leaf_nodes = params1[1]
+    min_samples_split = params1[2]
+    min_samples_leaf = params1[3]
+    criterion = params1[4]
+
+    dt = DecisionTreeClassifier(max_depth=max_depth, max_leaf_nodes=max_leaf_nodes, min_samples_split=min_samples_split,
+                                min_samples_leaf=min_samples_leaf, criterion=criterion)
+    decision_model = dt.fit(X_train, y_train)
+
+    y_train_pred = decision_model.predict(X_train)
+    y_test_pred = decision_model.predict(X_test)
+    train_ACC = 100 * np.round(accuracy_score(y_train, y_train_pred), 3)
+    test_ACC = 100 * np.round(accuracy_score(y_test, y_test_pred), 3)
+    test_return = [train_ACC, test_ACC]
+
+    # mlflow
+    dtparams = {'max_depth': max_depth, 'max_leaf_nodes': max_leaf_nodes, 'min_samples_split': min_samples_split,
+                 'min_samples_leaf': min_samples_leaf, 'criterion': criterion}
+    dtmatrics = {'train_accuracy': train_ACC, 'test_accuracy':test_ACC}
+    mlflow.end_run()
+    nameForRunName = str(datetime.now(timezone(timedelta(hours=8))))
+    with mlflow.start_run(run_name=nameForRunName):
+        mlflow.log_params(dtparams)
+        mlflow.set_tag('mlflow.user', user)
+        mlflow.log_metrics(dtmatrics)
+        mlflow.sklearn.log_model(decision_model, 'model', registered_model_name='聯成化Desicion_Tree')
+
+    return test_return
+
+
 
 
 

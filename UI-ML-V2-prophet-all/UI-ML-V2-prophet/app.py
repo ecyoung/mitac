@@ -16,7 +16,7 @@ def run():
 
     logo = Image.open(r'resources/mitac-logo.png')
     st.sidebar.image(logo, width=120)
-    mlflow.set_tracking_uri('mysql://mitac:mitac@192.168.24.39/mlflow')
+    mlflow.set_tracking_uri('mysql://mitac:mitac@192.168.24.39:3306/mlflow')
 
     run_app()
     # save_users(namel)

@@ -1,0 +1,12 @@
+creation_timestamp: 1673318133877
+current_stage: None
+description: null
+last_updated_timestamp: 1673318133877
+name: 聯成化Desicion_Tree
+run_id: da7c50dd19904d6997cc9fcb957d1fec
+run_link: null
+source: file:///root/streamlit/UI-ML-V2-prophet-all/UI-ML-V2-prophet/flask/mlruns/0/da7c50dd19904d6997cc9fcb957d1fec/artifacts/model
+status: READY
+status_message: null
+user_id: null
+version: 3
